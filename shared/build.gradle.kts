@@ -27,6 +27,9 @@ kotlin {
     }
     
     sourceSets {
+        sourceSets.commonMain.dependencies {
+            implementation(libs.sqldelight.coroutines)
+        }
         sourceSets.androidMain.dependencies {
             implementation(libs.sqldelight.android.driver)
         }
@@ -51,7 +54,7 @@ android {
 sqldelight {
     databases {
         create("Database") {
-            packageName.set("com.kakapo.sqldelightexample")
+            packageName.set("com.kakapo")
         }
     }
 }
